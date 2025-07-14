@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecomitram Lead Capture Form</title>
+  <title>Ecomitram Solar Consultancy Call</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -67,7 +67,7 @@
 <body>
   <div class="container">
     <img src="Logo.jpeg" alt="Ecomitram Logo" class="logo">
-    <h2>Get a Call Back from Ecomitram</h2>
+    <h2>Book Your Free consultancy call</h2>
     <form id="leadForm" action="https://sheetdb.io/api/v1/mftmp32xptxss" method="POST" onsubmit="return showThankYou()">
       <label for="name">Name:</label>
       <input type="text" id="name" name="data[name]" required>
@@ -83,10 +83,19 @@
 
       <label for="interest">Interested In:</label>
       <select id="interest" name="data[interest]">
+        <option value="N/A">N/A</option>
         <option value="Residential Solar">Residential Solar</option>
         <option value="Industrial Solar">Industrial Solar</option>
-        <option value="Channel Partner Program">Channel Partner Program</option>
         <option value="Others">Others</option>
+      </select>
+
+      <label for="electricity">Your Electricity Bill:</label>
+      <select id="electricity" name="data[electricity]">
+        <option value="N/A">N/A</option>
+        <option value="3000-5000">3000-5000</option>
+        <option value="5000-10000">5000-10000</option>
+        <option value="10000-15000">10000-15000</option>
+        <option value="above 15000">above 15000</option>
       </select>
 
       <label for="message">Message:</label>
