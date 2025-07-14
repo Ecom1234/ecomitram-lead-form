@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecomitram Lead Capture Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f9f4;
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      border: 2px solid #5DA84A;
+      border-radius: 10px;
+      padding: 30px;
+      position: relative;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+    }
+    h2 {
+      color: #337AB7;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #2A6EBB;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #5DA84A;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #5DA84A;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #48913A;
+    }
+    .thank-you {
+      display: none;
+      text-align: center;
+      color: #337AB7;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Logo.jpeg" alt="Ecomitram Logo" class="logo">
+    <h2>Get a Call Back from Ecomitram</h2>
+    <form id="leadForm" action="https://sheetdb.io/api/v1/mftmp32xptxss" method="POST" onsubmit="return showThankYou()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="data[name]" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="data[phone]" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="data[email]">
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="data[city]">
+
+      <label for="interest">Interested In:</label>
+      <select id="interest" name="data[interest]">
+        <option value="Residential Solar">Residential Solar</option>
+        <option value="Industrial Solar">Industrial Solar</option>
+        <option value="Channel Partner Program">Channel Partner Program</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="data[message]" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div class="thank-you" id="thankYouMessage">
+      ✅ Thank you for your interest! Our team will contact you shortly.
+    </div>
+  </div>
+
+  <script>
+    function showThankYou() {
+      document.getElementById("leadForm").style.display = "none";
+      document.getElementById("thankYouMessage").style.display = "block";
+      return true;
+    }
+  </script>
+</body>
+</html>
